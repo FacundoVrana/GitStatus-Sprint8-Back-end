@@ -1,12 +1,17 @@
 const express = require('express');
 const router = express.Router();
-const productsApiController = require("../../controllers/api/productsApiController");
+const productApiController = require('../../controller/api/productApiController');
 
-// Rutas
-// Listado de todos los productos en la db
-router.get('/', productsApiController.list);
+//Rutas
+//Listado de productos
+router.get('/', productApiController.list);
+//Cantidad de productos
+router.get('/count', productApiController.count);
+//ultimo producto
+router.get('/latest', productApiController.latest);
+//Detalle de un producto
+router.get('/:id', productApiController.detail);
 
-// Detalle de usuario
-// router.get('/:id', productsApiController.detail);
+
 
 module.exports = router;
